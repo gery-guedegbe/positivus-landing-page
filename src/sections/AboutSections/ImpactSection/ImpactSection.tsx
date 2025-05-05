@@ -1,0 +1,73 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+import CountUp from "react-countup";
+
+function ImpactSection() {
+  const impactItems = [
+    { id: 1, exp: 8, suffix: "+", desc: "Years of Experience" },
+    { id: 2, exp: 50, suffix: "+", desc: "Experts" },
+    { id: 3, exp: 100, suffix: "+", desc: "Successful Campaigns" },
+    { id: 4, exp: 20, suffix: "+", desc: "Industry Awards" },
+    { id: 5, exp: 500, suffix: "%", desc: "ROI for our clients" },
+  ];
+
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, {
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
+
+  return (
+    <motion.section
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex w-full flex-col items-center gap-6 text-center lg:items-start lg:gap-16 lg:text-start"
+    >
+      {/* Title Section */}
+      <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
+        <div className="text-custom-dark text-[32px] font-medium md:text-[40px]">
+          <span className="bg-custom-green rounded-lg px-3 py-1">
+            Our Impact in Numbers
+          </span>
+        </div>
+
+        <p className="max-w-xl text-[16px] leading-[28px] text-black">
+          A snapshot of the milestones and achievements that drive our success
+        </p>
+      </div>
+
+      <div className="relative flex w-full flex-col items-center justify-center">
+        <div className="grid w-full grid-cols-2 gap-y-4 text-center sm:grid-cols-3 lg:grid-cols-5 lg:text-start">
+          {impactItems.map((item) => (
+            <div
+              key={item.id}
+              className="flex h-1/2 w-full flex-col items-center rounded-t-2xl border-x border-t border-t-black p-4 lg:items-start"
+            >
+              <span className="text-[36px] font-bold text-black md:text-[40px]">
+                {isInView && (
+                  <CountUp
+                    end={item.exp}
+                    duration={2.75}
+                    suffix={item.suffix}
+                    enableScrollSpy={true}
+                    scrollSpyOnce
+                  />
+                )}
+              </span>
+
+              <span className="text-[16px] text-black md:text-[18px]">
+                {item.desc}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
+export default ImpactSection;
