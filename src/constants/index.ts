@@ -240,3 +240,43 @@ export const testimonials = [
     role: "Marketing Director at XYZ Corp",
   },
 ];
+
+export const faqItems = [
+  {
+    id: 1,
+    question: "Are there any additional fees or charges that may apply?",
+    answer:
+      "Our pricing plans include all listed services with no hidden fees. Any optional add-ons or custom requests will be discussed and approved by you before implementation, with transparent pricing provided upfront.",
+  },
+  {
+    id: 2,
+    question:
+      "How long does it typically take to see results from SEO campaigns?",
+    answer:
+      "SEO is a long-term strategy. Most clients start seeing initial improvements within 3-6 months, with significant results typically appearing between 6-12 months. This timeline varies based on your industry competition and website's current state.",
+  },
+  {
+    id: 3,
+    question: "Do you work with businesses in specific industries only?",
+    answer:
+      "We have experience across multiple industries including e-commerce, healthcare, hospitality, and professional services. Our strategies are tailored to each industry's unique digital landscape and customer behaviors.",
+  },
+  {
+    id: 4,
+    question: "What's included in your monthly reporting?",
+    answer:
+      "Our comprehensive monthly reports include: traffic analytics, conversion rates, campaign performance, ROI analysis, and actionable insights. We also provide quarterly strategy reviews with our team.",
+  },
+  {
+    id: 5,
+    question: "Can we pause our marketing campaign if needed?",
+    answer:
+      "Yes, campaigns can be paused with 30 days notice. However, we recommend maintaining consistency for optimal results, especially for SEO where pauses can impact rankings.",
+  },
+  {
+    id: 6,
+    question: "How do you measure campaign success?",
+    answer:
+      "We track KPIs aligned with your business goals: website traffic, lead generation, conversion rates, customer acquisition cost, and ROI. Our dashboards provide real-time access to these metrics.",
+  },
+];

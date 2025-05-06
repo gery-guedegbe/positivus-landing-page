@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "motion/react";
+import { faqItems } from "../../constants";
 
-import { ourWorkingItems } from "../../constants";
 import plus_icon from "@assets/icons/plus_icon.png";
 import minus_icon from "@assets/icons/minus_icon.png";
 
-function OurWorkingSection() {
+function Faq() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: true,
@@ -57,13 +57,13 @@ function OurWorkingSection() {
       >
         <h3 className="text-custom-dark text-[36px] font-medium md:text-[40px]">
           <span className="bg-custom-green rounded-lg px-2 py-0.5">
-            Our Working Process
+            Frequently Asked
+          </span>
+          <br />
+          <span className="bg-custom-green rounded-lg px-2 py-0.5">
+            Question
           </span>
         </h3>
-
-        <p className="w-full max-w-full text-[16px] leading-[28px] font-normal text-black lg:max-w-[580px]">
-          Step-by-Step Guide to Achieving Your Business Goals
-        </p>
       </motion.div>
 
       <motion.div
@@ -72,7 +72,7 @@ function OurWorkingSection() {
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         className="flex w-full flex-col items-start gap-6"
       >
-        {ourWorkingItems.map((card) => {
+        {faqItems.map((card) => {
           const isOpen = openCardId === card.id;
           return (
             <motion.div
@@ -83,16 +83,10 @@ function OurWorkingSection() {
                 isOpen ? "bg-custom-green" : "bg-custom-grey"
               } flex w-full cursor-pointer flex-col gap-2 rounded-3xl border border-black p-6 text-start shadow-[0px_4px_0px_#000]`}
             >
-              <div className="flex w-full items-center justify-between">
-                <div className="flex items-center gap-3 lg:gap-6">
-                  <h3 className="text-[30px] font-medium text-black md:text-[40px] lg:text-[60px]">
-                    {card.num}
-                  </h3>
-
-                  <span className="text-[18px] font-medium text-black md:text-[18px] lg:text-[30px]">
-                    {card.title}
-                  </span>
-                </div>
+              <div className="flex w-full items-center justify-between gap-1.5">
+                <span className="text-[18px] font-medium text-black md:text-[18px] lg:text-[30px]">
+                  {card.question}
+                </span>
 
                 <Image
                   src={isOpen ? minus_icon : plus_icon}
@@ -107,7 +101,7 @@ function OurWorkingSection() {
                     <div className="my-3 h-[1px] w-full bg-black" />
 
                     <p className="text-[16px] text-black lg:text-[18px]">
-                      {card.desc}
+                      {card.answer}
                     </p>
                   </ExpandableContent>
                 )}
@@ -120,4 +114,4 @@ function OurWorkingSection() {
   );
 }
 
-export default OurWorkingSection;
+export default Faq;

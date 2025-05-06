@@ -134,7 +134,7 @@ export default function Page() {
             Let&apos;s work together to grow your online presence.
           </p>
 
-          <button className="bg-custom-green flex w-full items-center justify-center rounded-xl px-4 py-3 text-center text-sm font-medium text-black outline-none lg:py-5 lg:text-lg">
+          <button className="bg-custom-green flex w-full cursor-pointer items-center justify-center rounded-xl px-4 py-3 text-center text-sm font-medium text-black outline-none lg:py-5 lg:text-lg">
             Start My SEO Journey
           </button>
         </div>
