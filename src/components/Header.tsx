@@ -63,7 +63,7 @@ const Header = () => {
           animate="visible"
           className="cursor-pointer"
         >
-          <Link href="/">
+          <Link href="/" prefetch={true}>
             <Image
               src={logo}
               alt="Logo"
@@ -84,6 +84,7 @@ const Header = () => {
             >
               <Link
                 href={link.path}
+                prefetch={true}
                 className={`text-custom-dark text-[20px] leading-[28px] font-[400] ${
                   pathname === link.path
                     ? "bg-custom-green rounded-lg px-4 py-2.5"
