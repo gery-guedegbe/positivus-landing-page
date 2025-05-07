@@ -30,7 +30,7 @@ Le projet est construit avec les technologies suivantes :
 1. **Cloner le dépôt :**
 
 ```bash
-git clone https://github.com/ton-utilisateur/positivus-landing-page.git
+git clone https://github.com/gery-guedegbe/positivus-landing-page.git
 
 ```
 
