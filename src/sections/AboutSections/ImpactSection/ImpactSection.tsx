@@ -42,14 +42,18 @@ function ImpactSection() {
 
       <div className="relative flex w-full flex-col items-center justify-center">
         <div className="grid w-full grid-cols-2 gap-y-4 text-center sm:grid-cols-3 lg:grid-cols-5 lg:text-start">
-          {impactItems.map((item) => (
+          {impactItems.map((item, index) => (
             <div
               key={item.id}
               className="flex h-1/2 w-full flex-col items-center rounded-t-2xl border-x border-t border-t-black p-4 lg:items-start"
             >
               <span className="flex items-center gap-0.5 text-[36px] font-bold text-black md:text-[40px]">
                 {isInView && (
-                  <CountUp isCounting end={item.exp} duration={2.75} />
+                  <CountUp
+                    isCounting
+                    end={item.exp}
+                    duration={2 + index * 0.25}
+                  />
                 )}
 
                 <span>{item.suffix}</span>
