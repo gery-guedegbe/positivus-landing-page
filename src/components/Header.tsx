@@ -167,6 +167,7 @@ const Header = () => {
                     >
                       <Link
                         href={link.path}
+                        onClick={handleToggled}
                         className={`text-custom-dark text-[18px] leading-[28px] font-[400] md:text-[28px] ${
                           pathname === link.path
                             ? "bg-custom-green rounded-lg px-4 py-2.5"
