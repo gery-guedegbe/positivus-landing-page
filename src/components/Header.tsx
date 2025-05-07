@@ -63,7 +63,7 @@ const Header = () => {
           animate="visible"
           className="cursor-pointer"
         >
-          <Link href="/" prefetch={true}>
+          <Link href="/">
             <Image
               src={logo}
               alt="Logo"
