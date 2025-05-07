@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import CountUp from "react-countup";
+import { CountUp } from "use-count-up";
 
 function ImpactSection() {
   const impactItems = [
@@ -47,16 +47,12 @@ function ImpactSection() {
               key={item.id}
               className="flex h-1/2 w-full flex-col items-center rounded-t-2xl border-x border-t border-t-black p-4 lg:items-start"
             >
-              <span className="text-[36px] font-bold text-black md:text-[40px]">
+              <span className="flex items-center gap-0.5 text-[36px] font-bold text-black md:text-[40px]">
                 {isInView && (
-                  <CountUp
-                    end={item.exp}
-                    duration={2.75}
-                    suffix={item.suffix}
-                    enableScrollSpy={true}
-                    scrollSpyOnce
-                  />
+                  <CountUp isCounting end={item.exp} duration={2.75} />
                 )}
+
+                <span>{item.suffix}</span>
               </span>
 
               <span className="text-[16px] text-black md:text-[18px]">
