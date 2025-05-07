@@ -72,7 +72,7 @@ const Header = () => {
           </Link>
         </motion.div>
 
-        <ul className="hidden items-center gap-[40px] lg:flex">
+        <ul className="hidden items-center gap-[20px] lg:flex">
           {linkItems.map((link, index) => (
             <motion.li
               key={link.id}
