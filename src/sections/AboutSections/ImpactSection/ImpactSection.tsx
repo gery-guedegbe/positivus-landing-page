@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CountUp } from "use-count-up";
 
 function ImpactSection() {
@@ -18,6 +18,14 @@ function ImpactSection() {
     once: true,
     margin: "0px 0px -100px 0px",
   });
+
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (isInView && !hasStarted) {
+      setHasStarted(true);
+    }
+  }, [isInView, hasStarted]);
 
   return (
     <motion.section
@@ -48,7 +56,7 @@ function ImpactSection() {
               className="flex h-1/2 w-full flex-col items-center rounded-t-2xl border-x border-t border-t-black p-4 lg:items-start"
             >
               <span className="flex items-center gap-0.5 text-[36px] font-bold text-black md:text-[40px]">
-                {isInView && (
+                {hasStarted && (
                   <CountUp
                     isCounting
                     end={item.exp}
